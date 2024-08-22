@@ -6,12 +6,13 @@ export default function LandingPage() {
     <div>
       {/* ----- HEADER ----- */}
       <header class="font-Poppins">
-        <nav class="container flex items-center py-4 mt-4 sm:mt-12">
-          <div class="py-1"><img src="/images/logo-bookmark.svg" alt="logo" /></div>
+        <nav class="container bg-slate-700 flex items-center py-2">
+          {/* <div class="py-1"><img src="/images/truview-logo.svg" alt="logo" /></div> */}
+          <h1 class="font-bold text-white text-2xl">TRUVIEW</h1>
           <ul class="hidden sm:flex flex-1 justify-end items-center gap-12 text-bookmark-blue uppercase text-xs">
-            <li class="cursor-pointer">Features</li>
-            <li class="cursor-pointer">Pricing</li>
-            <li class="cursor-pointer">Contact</li>
+            <li class="cursor-pointer text-white">Features</li>
+            <li class="cursor-pointer text-white">About Us</li>
+            <li class="cursor-pointer text-white">Contact</li>
             <button type="button" class="bg-bookmark-red text-white rounded-md px-7 py-3 uppercase">LOGIN</button>
           </ul>
           <div class="flex sm:hidden flex-1 justify-end">
