@@ -17,6 +17,10 @@ module.exports = {
         "bookmark-grey": "#9194A2",
         "bookmark-white": "#f7f7f7",
         "emerald": "#022c22"
+      },
+      backgroundImage: {
+        'civil-1': "url('/civil-1.jpg')",
+        'civil-3': "url('/civil-3.jpg')",
       }
     },
     container: {

@@ -1,52 +1,56 @@
 'use client'
 
+import Link from "next/link";
+
 export default function LandingPage() {
 
   return (
     <div>
       {/* ----- HEADER ----- */}
       <header class="font-Poppins">
-        <nav class="container bg-slate-700 flex items-center py-2">
+        <nav class=" bg-zinc-500 flex items-center py-2">
           {/* <div class="py-1"><img src="/images/truview-logo.svg" alt="logo" /></div> */}
-          <h1 class="font-bold text-white text-2xl">TRUVIEW</h1>
-          <ul class="hidden sm:flex flex-1 justify-end items-center gap-12 text-bookmark-blue uppercase text-xs">
-            <li class="cursor-pointer text-white">Features</li>
+          <h1 class="font-bold text-white text-2xl pl-12">TRUVIEW</h1>
+          <ul class="hidden sm:flex flex-1 justify-end items-center gap-12 text-bookmark-blue uppercase text-xs pr-12">
+            <Link href="/features"><li class="cursor-pointer text-white">Features</li></Link>
             <li class="cursor-pointer text-white">About Us</li>
             <li class="cursor-pointer text-white">Contact</li>
             <button type="button" class="bg-bookmark-red text-white rounded-md px-7 py-3 uppercase">LOGIN</button>
           </ul>
-          <div class="flex sm:hidden flex-1 justify-end">
+          <div class="flex sm:hidden flex-1 justify-end pr-8">
             <i class="text-2xl fa-solid fa-bars"></i>
           </div>
         </nav>
       </header>
 
       {/* ----- HERO ----- */}
+      
       <section class="relative">
-        <div class="container flex flex-col-reverse lg:flex-row items-center gap-12 mt-14 lg:mt-28">
+      <div class="bg-none lg:bg-civil-3 lg:bg-center pb-48">
+        <div class="container flex flex-col items-center lg:flex-row lg:justify-items-end gap-12 pt-14 lg:pt-28 ">
+          {/* ----- Image ----- */}
+          {/* <div class="flex justify-center flex-1 mb-10 md:mb-16 lg:mb-0 z-10">
+            <img class="w-5/6 h-5/6 sm:w-3/4 sm:h3/4 md:w-full md:h-full" src="/images/hero-bg.png" alt="" />
+          </div> */}
           {/* ----- Content ----- */}
-          <div class="flex flex-1 flex-col items-center lg:items-start">
-            <h2 class="text-bookmark-blue text-3xl md:text-4 lg:text-5xl text-center lg:text-left mb-6">
-              A Simple Bookmark Manager
+          <div class="flex flex-col justify-center lg:justify-items-end items-center lg:items-end max-w-md lg:ml-auto">
+            <h2 class="text-bookmark-blue text-3xl md:text-4 lg:text-5xl lg:text-right mb-6">
+              Your Partner In Disputes
             </h2>
-            <p class="text-bookmark-grey text-lg text-center lg:text-left mb-6">
-              Manage your bookmarks effortlessly with our simple bookmark manager. Organize your favorite websites, categorize them with tags, and easily access them whenever you need.
+            <p class="text-bookmark-grey text-lg text-center lg:text-right mb-6">
+              Manage your disputes effortlessly with our innovative dispute manager aided with BIM.
             </p>
             <div class="flex justify-center flex-wrap gap-6">
-              <button type="button" class="btn btn-purple hover:bg-bookmark-white hover:text-black">Get it on Chrome</button>
-              <button type="button" class="btn btn-white hover:bg-bookmark-purple hover:text-white">Get it on Firefox</button>
+              <button type="button" class="btn btn-zinc hover:bg-zinc-200 hover:text-black">More Info</button>
+              <button type="button" class="btn btn-white hover:bg-zinc-500 hover:text-white">Contact Us</button>
             </div>
-          </div>
-          {/* ----- Image ----- */}
-          <div class="flex justify-center flex-1 mb-10 md:mb-16 lg:mb-0 z-10">
-            <img class="w-5/6 h-5/6 sm:w-3/4 sm:h3/4 md:w-full md:h-full" src="/images/hero-bg.png" alt="" />
           </div>
         </div>
         {/* ----- ROUNDED RECTANGLE ----- */}
-        <div class="hidden md:block overflow-hidden bg-bookmark-purple rounded-l-full absolute h-80 w-2/4 top-32 right-0 lg:-bottom-28 lg:-right-36">
+        {/* <div class="hidden md:block overflow-hidden bg-slate-700 rounded-l-full absolute h-80 w-2/4 top-32 right-0 lg:-bottom-28 lg:-right-36">
+        </div> */}
         </div>
       </section>
-
       {/* ----- FEATURES ----- */}
       <section class="bg-bookmark-white py-20 mt:20 lg:mt-60 md:mt-10">
         {/* ----- Heading ----- */}
