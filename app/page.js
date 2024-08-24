@@ -1,11 +1,15 @@
 'use client'
 
 import Link from "next/link";
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/react"
 
 export default function LandingPage() {
 
   return (
     <div>
+      <Analytics/>
+      <SpeedInsights/>
       {/* ----- HEADER ----- */}
       <header class="font-Poppins">
         <nav class=" bg-zinc-500 flex items-center py-2">
