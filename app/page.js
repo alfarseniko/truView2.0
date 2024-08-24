@@ -18,7 +18,7 @@ export default function LandingPage() {
           {/* <div class="py-1"><img src="/images/truview-logo.svg" alt="logo" /></div> */}
           <h1 class="font-bold text-white text-2xl pl-12">TRUVIEW</h1>
           <ul class="hidden sm:flex flex-1 justify-end items-center gap-12 text-bookmark-blue uppercase text-xs pr-12">
-            <Link href="/features"><li class="cursor-pointer text-white">Features</li></Link>
+            <li class="cursor-pointer text-white">Features</li>
             <li class="cursor-pointer text-white">About Us</li>
             <li class="cursor-pointer text-white">Contact</li>
             <button type="button" class="bg-bookmark-red text-white rounded-md px-7 py-3 uppercase">LOGIN</button>
@@ -203,30 +203,61 @@ export default function LandingPage() {
           </div>
           {/* ----- FAQ Items ----- */}
           <div class="flex flex-col sm:w-3/4 lg:w-5/12 mt-12 mx-auto">
-            <div class="flex items-center border-b py-4">
-              <span class="flex-1">What is TruView?</span>
-              <i class="text-zinc-500 fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="flex items-center border-b py-4">
-              <span class="flex-1">How does TruView improve dispute resolution?</span>
-              <i class="text-zinc-500 fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="flex items-center border-b py-4">
-              <span class="flex-1">Can TruView be integrated with my current systems?</span>
-              <i class="text-zinc-500 fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="flex items-center border-b py-4">
-              <span class="flex-1">Is my data secure with TruView?</span>
-              <i class="text-zinc-500 fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="flex items-center border-b py-4">
-              <span class="flex-1">Who can benefit from using TruView?</span>
-              <i class="text-zinc-500 fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="flex items-center border-b py-4">
-              <span class="flex-1">How can I get started with TruView?</span>
-              <i class="text-zinc-500 fa-solid fa-chevron-down"></i>
-            </div>
+            <details class="flex items-center border-b py-4">
+              <summary class="flex-1 outline-none cursor-pointer flex justify-start">
+                What is TruView?
+                <i class="text-zinc-500 ml-auto justify-end fa-solid fa-chevron-down"></i>
+              </summary>
+              <div class="py-1 px-1 font-light text-sm">
+                  <p>TruView is a blockchain-backed project management platform designed to enhance transparency, efficiency, and trust in the construction industry by integrating with Building Information Modeling.</p>
+              </div>
+            </details>
+            <details class="flex items-center border-b py-4">
+              <summary class="flex-1 outline-none cursor-pointer flex justify-start">
+              How does TruView improve dispute resolution?
+                <i class="text-zinc-500 ml-auto justify-end fa-solid fa-chevron-down"></i>
+              </summary>
+              <div class="py-1 px-1 font-light text-sm">
+                  <p>TruView keeps an immutable, verifiable record of all project data, which can be used to resolve disputes quickly and fairly, reducing the need for lengthy litigation.</p>
+              </div>
+            </details>
+            <details class="flex items-center border-b py-4">
+              <summary class="flex-1 outline-none cursor-pointer flex justify-start">
+              Can TruView be integrated with my current systems?
+                <i class="text-zinc-500 ml-auto justify-end fa-solid fa-chevron-down"></i>
+              </summary>
+              <div class="py-1 px-1 font-light text-sm">
+                  <p>Yes, TruView is designed to seamlessly integrate with existing BIM systems and project management tools, ensuring a smooth transition and enhanced functionality.</p>
+              </div>
+            </details>
+            <details class="flex items-center border-b py-4">
+              <summary class="flex-1 outline-none cursor-pointer flex justify-start">
+              Is my data secure with TruView?
+                <i class="text-zinc-500 ml-auto justify-end fa-solid fa-chevron-down"></i>
+              </summary>
+              <div class="py-1 px-1 font-light text-sm">
+                  <p>Absolutely. TruView leverages blockchain technology, making all data stored on the platform immutable and tamper-proof, ensuring maximum security and integrity.</p>
+              </div>
+            </details>
+            <details class="flex items-center border-b py-4">
+              <summary class="flex-1 outline-none cursor-pointer flex justify-start">
+              Who can benefit from using TruView?
+                <i class="text-zinc-500 ml-auto justify-end fa-solid fa-chevron-down"></i>
+              </summary>
+              <div class="py-1 px-1 font-light text-sm">
+                  <p>TruView is ideal for construction companies, project managers, architects, and all stakeholders involved in large-scale construction projects who want to ensure transparency and efficiency.</p>
+              </div>
+            </details>
+            <details class="flex items-center border-b py-4">
+              <summary class="flex-1 outline-none cursor-pointer flex justify-start">
+              How can I get started with TruView?
+                <i class="text-zinc-500 ml-auto justify-end fa-solid fa-chevron-down"></i>
+              </summary>
+              <div class="py-1 px-1 font-light text-sm">
+                  <p>Getting started with TruView is easy. Contact us today to schedule a demo or to speak with one of our experts about how TruView can transform your next project.</p>
+              </div>
+            </details>
+            
             <button type="button" class="flex self-center mt-4 btn btn-zinc hover:bg-bookmark-white hover:text-black">More Info</button>
           </div>
         </div>
