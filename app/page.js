@@ -1,5 +1,7 @@
 'use client'
 
+/**this is the faqs branch */
+
 import Link from "next/link";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
