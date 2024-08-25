@@ -4,7 +4,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
 import { useState } from 'react';
 import { collection, getDocs, query, doc, getDoc, setDoc, deleteDoc, serverTimestamp } from 'firebase/firestore';
-import { db } from "./firebase";
+import { db } from "./firebase.js";
 
 export default function LandingPage() {
 
