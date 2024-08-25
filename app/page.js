@@ -1,12 +1,37 @@
 'use client'
 
-/**this is the faqs branch */
-
-import Link from "next/link";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
+import { useState } from 'react';
+import { collection, getDocs, query, doc, getDoc, setDoc, deleteDoc, serverTimestamp } from 'firebase/firestore';
+import { db } from "./firebase";
 
 export default function LandingPage() {
+
+  const [email, setEmail] = useState('');
+  const [submitted, setSubmitted] = useState(false);
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = async (e) => {
+    //returns if empty form is passed
+    e.preventDefault();
+    try{
+    if (!email) return
+    const docRef = doc(collection(db, 'emails'))
+    const docSnap = await getDoc(docRef)
+    console.log(email)
+    await setDoc(docRef, { email: email, time: serverTimestamp()})
+    setMessage('Thank you! Your email has been recorded.');
+    setEmail('');
+    setSubmitted(true)
+    }
+
+    catch {
+      console.error('Error adding document: ', error);
+    setMessage('An error occurred. Please try again.');
+
+    }
+  };
 
   return (
     <div>
@@ -270,9 +295,24 @@ export default function LandingPage() {
           <div class="sm:w-3/4 lg:w-2/4 mx-auto">
             {/* <p class="font-light uppercase text-center mb-8">35,000+ ALREADY JOINED</p> */}
             <h1 class="text-3xl text-center"> Stay up-to-date with what we're doing</h1>
-            <div class="flex flex-col sm:flex-row gap-6 mt-8">
-              <input type="text" placeholder="Enter your email address" class="focus:outline-none flex-1 px-2 py-3 rounded-md text-black" />
-              <button type="button" class="btn btn-red hover:bg-bookmark-white hover:text-black">Contact Us</button>
+            <div class="flex flex-col md:flex-row gap-6 mt-8 justify-center">
+            {!submitted ? (
+        <form onSubmit={handleSubmit}>
+          <input
+            class="focus:outline-none flex-1 px-2 py-3 rounded-md text-black"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Enter your email address"
+            required
+          />
+          <button type="submit" class="btn btn-red hover:bg-bookmark-white hover:text-black ml-2">Subscribe</button>
+        </form>
+      ) : (
+        message && <p>{message}</p>
+      )}
+              {/* <input type="text" placeholder="Enter your email address" class="focus:outline-none flex-1 px-2 py-3 rounded-md text-black" />
+              <button type="button" class="btn btn-red hover:bg-bookmark-white hover:text-black">Contact Us</button> */}
             </div>
           </div>
         </div>
