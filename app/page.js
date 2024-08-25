@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/react"
 import { useState } from 'react';
 import { collection, getDocs, query, doc, getDoc, setDoc, deleteDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from "./firebase.js";
+import Link from "next/link.js";
 
 export default function LandingPage() {
 
@@ -47,8 +48,8 @@ export default function LandingPage() {
       <nav class="bg-zinc-500 flex items-center py-2">
         <h1 class="font-bold text-white text-2xl pl-12">TRUVIEW</h1>
         <ul class="hidden sm:flex flex-1 justify-end items-center gap-12 text-bookmark-blue uppercase text-xs pr-12">
-          <li class="cursor-pointer text-white">About Us</li>
-          <li class="cursor-pointer text-white">Contact Us</li>
+          <li class="cursor-pointer text-white"><Link href="https://www.linkedin.com/company/truview1/">About Us</Link></li>
+          <li class="cursor-pointer text-white"><Link href="https://www.linkedin.com/company/truview1/">Contact Us</Link></li>
           <button type="button" class="bg-bookmark-red text-white rounded-md px-7 py-3 uppercase">LOGIN</button>
         </ul>
         <div class="flex sm:hidden flex-1 justify-end pr-8">
@@ -91,7 +92,7 @@ export default function LandingPage() {
             </p>
             <div class="flex justify-center flex-wrap gap-6">
               <button type="button" class="btn btn-zinc hover:bg-zinc-200 hover:text-black">More Info</button>
-              <button type="button" class="btn btn-white hover:bg-zinc-500 hover:text-white">Contact Us</button>
+              <button type="button" class="btn btn-white hover:bg-zinc-500 hover:text-white"><Link href="https://www.linkedin.com/company/truview1/">Contact Us</Link></button>
             </div>
           </div>
         </div>
@@ -343,14 +344,12 @@ export default function LandingPage() {
             {/* <img src="/images/logo-bookmark-white.png" alt="" /> */}
             <h1 class="font-bold text-white text-2xl pl-12">TRUVIEW</h1>
             <ul class="flex text-white uppercase gap-12 text-xs">
-              <li class="cursor-pointer">Features</li>
-              <li class="cursor-pointer">Pricing</li>
-              <li class="cursor-pointer">Contact</li>
+            <li class="cursor-pointer text-white"><Link href="https://www.linkedin.com/company/truview1/">Contact Us</Link></li>
+
             </ul>
           </div>
           <div class="flex gap-10 mt-12 md:mt-0">
-            <li><i class="text-white text-2xl fa-brands fa-facebook"></i></li>
-            <li><i class="text-white text-2xl fa-brands fa-twitter"></i></li>
+            <li><Link href="https://www.linkedin.com/company/truview1/"><i class="text-white text-2xl fa-brands fa-linkedin"></i></Link></li>
           </div>
         </div>
       </section>
