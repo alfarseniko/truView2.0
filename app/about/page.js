@@ -21,7 +21,7 @@ export default function AboutUs() {
           <h1 class="font-bold text-white text-2xl pl-12"><Link href="/">TRUVIEW</Link></h1>
           <ul class="hidden sm:flex flex-1 justify-end items-center gap-12 text-bookmark-blue uppercase text-xs pr-12">
             <li class="cursor-pointer text-white">About Us</li>
-            <li class="cursor-pointer text-white"><Link href="https://www.linkedin.com/company/truview1/">Contact Us</Link></li>
+            <li class="cursor-pointer text-white"><Link href="/contact">Contact Us</Link></li>
             <button type="button" class="bg-bookmark-red text-white rounded-md px-7 py-3 uppercase">LOGIN</button>
           </ul>
           <div class="flex sm:hidden flex-1 justify-end pr-8">
@@ -36,7 +36,7 @@ export default function AboutUs() {
         {hamburgerIsOpen && (
           <ul class="flex flex-col items-center bg-zinc-500 text-white text-center sm:hidden">
             <li class="py-2 cursor-pointer text-white">About Us</li>
-            <li class="py-2 cursor-pointer text-white"><Link href="https://www.linkedin.com/company/truview1/">Contact Us</Link></li>
+            <li class="py-2 cursor-pointer text-white"><Link href="/contact">Contact Us</Link></li>
 
             <button type="button" class="bg-bookmark-red text-white rounded-md px-7 py-3 mt-1 mb-3 uppercase">LOGIN</button>
 
@@ -137,7 +137,7 @@ export default function AboutUs() {
 
         <div class="mt-16 text-center">
 
-          <button type="button" class="btn btn-zinc hover:bg-zinc-200 hover:text-black"><Link href="https://www.linkedin.com/company/truview1/">Contact Us</Link></button>
+          <button type="button" class="btn btn-zinc hover:bg-zinc-200 hover:text-black"><Link href="/contact">Contact Us</Link></button>
 
         </div>
       </section>
@@ -150,8 +150,8 @@ export default function AboutUs() {
             {/* <img src="/images/logo-bookmark-white.png" alt="" /> */}
             <h1 class="font-bold text-white text-2xl pl-12"><Link href="/">TRUVIEW</Link></h1>
             <ul class="flex text-white uppercase gap-12 text-xs">
-              <li class="cursor-pointer text-white"><Link href="/aboutus">About Us</Link></li>
-              <li class="cursor-pointer text-white"><Link href="https://www.linkedin.com/company/truview1/">Contact Us</Link></li>
+              <li class="cursor-pointer text-white">About Us</li>
+              <li class="cursor-pointer text-white"><Link href="/contact">Contact Us</Link></li>
             </ul>
           </div>
           <div class="flex gap-10 mt-12 md:mt-0">

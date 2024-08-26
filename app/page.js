@@ -20,7 +20,6 @@ export default function LandingPage() {
     try {
       if (!email) return
       const docRef = doc(collection(db, 'emails'))
-      const docSnap = await getDoc(docRef)
       console.log(email)
       await setDoc(docRef, { email: email, time: serverTimestamp() })
       setMessage('Thank you! Your email has been recorded.');
@@ -49,7 +48,7 @@ export default function LandingPage() {
           <h1 class="font-bold text-white text-2xl pl-12">TRUVIEW</h1>
           <ul class="hidden sm:flex flex-1 justify-end items-center gap-12 text-bookmark-blue uppercase text-xs pr-12">
             <li class="cursor-pointer text-white"><Link href="/aboutus">About Us</Link></li>
-            <li class="cursor-pointer text-white"><Link href="https://www.linkedin.com/company/truview1/">Contact Us</Link></li>
+            <li class="cursor-pointer text-white"><Link href="/contact">Contact Us</Link></li>
             <button type="button" class="bg-bookmark-red text-white rounded-md px-7 py-3 uppercase">LOGIN</button>
           </ul>
           <div class="flex sm:hidden flex-1 justify-end pr-8">
@@ -63,8 +62,8 @@ export default function LandingPage() {
         {/* Mobile Menu */}
         {isOpen && (
           <ul class="flex flex-col items-center bg-zinc-500 text-white text-center sm:hidden">
-            <li class="py-2 cursor-pointer text-white">About Us</li>
-            <li class="py-2 cursor-pointer text-white">Contact Us</li>
+            <li class="py-2 cursor-pointer text-white"><Link href="/aboutus">About Us</Link></li>
+            <li class="py-2 cursor-pointer text-white"><Link href="https://www.linkedin.com/company/truview1/">Contact Us</Link></li>
 
             <button type="button" class="bg-bookmark-red text-white rounded-md px-7 py-3 mt-1 mb-3 uppercase">LOGIN</button>
 
@@ -91,8 +90,7 @@ export default function LandingPage() {
                 Manage your disputes effortlessly with our innovative dispute manager aided with BIM.
               </p>
               <div class="flex justify-center flex-wrap gap-6">
-                <button type="button" class="btn btn-zinc hover:bg-zinc-200 hover:text-black">More Info</button>
-                <button type="button" class="btn btn-white hover:bg-zinc-500 hover:text-white"><Link href="https://www.linkedin.com/company/truview1/">Contact Us</Link></button>
+                <button type="button" class="btn btn-white hover:bg-zinc-500 hover:text-white"><Link href="/contact">Contact Us</Link></button>
               </div>
             </div>
           </div>
@@ -126,9 +124,9 @@ export default function LandingPage() {
               </h1>
               <p class="text-bookmark-grey my-4 text-lg text-center lg:text-left sm:w-3/4 lg:w-full">
                 Seamlessly combine the robust transparency of blockchain with the precision of BIM. TruView ensures every detail of your project is securely recorded and tamper-proof.</p>
-              <div class="flex justify-center flex-wrap gap-6">
+              {/* <div class="flex justify-center flex-wrap gap-6">
                 <button type="button" class="btn btn-zinc hover:bg-bookmark-white hover:text-black">More Info</button>
-              </div>
+              </div> */}
             </div>
             {/* ----- ROUNDED RECTANGLE ----- */}
             <div class="hidden lg:block overflow-hidden bg-zinc-500 rounded-r-full absolute h-80 w-2/4 lg:-bottom-24 lg:-left-36">
@@ -149,9 +147,9 @@ export default function LandingPage() {
               </h1>
               <p class="text-bookmark-grey my-4 text-lg text-center lg:text-left sm:w-3/4 lg:w-full">
                 Resolve disputes faster and more effectively with a transparent, verifiable trail of project activities. TruView provides a clear, indisputable record to streamline arbitration processes.</p>
-              <div class="flex justify-center flex-wrap gap-6">
+              {/* <div class="flex justify-center flex-wrap gap-6">
                 <button type="button" class="btn btn-zinc hover:bg-bookmark-white hover:text-black">More Info</button>
-              </div>
+              </div> */}
             </div>
             {/* ----- ROUNDED RECTANGLE ----- */}
             <div class="hidden lg:block overflow-hidden bg-zinc-500 rounded-l-full absolute h-80 w-2/4 lg:-bottom-24 lg:-right-36">
@@ -172,9 +170,9 @@ export default function LandingPage() {
               </h1>
               <p class="text-bookmark-grey my-4 text-lg text-center lg:text-left sm:w-3/4 lg:w-full">
                 Build trust among all project participants with a platform that guarantees accountability and transparency, reducing risks and fostering a collaborative environment.</p>
-              <div class="flex justify-center flex-wrap gap-6">
+              {/* <div class="flex justify-center flex-wrap gap-6">
                 <button type="button" class="btn btn-zinc hover:bg-bookmark-white hover:text-black">More Info</button>
-              </div>
+              </div> */}
             </div>
             {/* ----- ROUNDED RECTANGLE ----- */}
             <div class="hidden lg:block overflow-hidden bg-zinc-500 rounded-r-full absolute h-80 w-2/4 lg:-bottom-24 lg:-left-36">
@@ -251,7 +249,7 @@ export default function LandingPage() {
               </div>
             </details>
 
-            <button type="button" class="flex self-center mt-4 btn btn-zinc hover:bg-bookmark-white hover:text-black">More Info</button>
+            {/* <button type="button" class="flex self-center mt-4 btn btn-zinc hover:bg-bookmark-white hover:text-black">More Info</button> */}
           </div>
         </div>
       </section>
@@ -294,8 +292,8 @@ export default function LandingPage() {
             {/* <img src="/images/logo-bookmark-white.png" alt="" /> */}
             <h1 class="font-bold text-white text-2xl pl-12"><Link href="/">TRUVIEW</Link></h1>
             <ul class="flex text-white uppercase gap-12 text-xs">
-              <li class="cursor-pointer text-white"><Link href="/aboutus">About Us</Link></li>
-              <li class="cursor-pointer text-white"><Link href="https://www.linkedin.com/company/truview1/">Contact Us</Link></li>
+              <li class="cursor-pointer text-white"><Link href="/about">About Us</Link></li>
+              <li class="cursor-pointer text-white"><Link href="/contact">Contact Us</Link></li>
             </ul>
           </div>
           <div class="flex gap-10 mt-12 md:mt-0">
