@@ -17,20 +17,20 @@ export default function LandingPage() {
   const handleSubmit = async (e) => {
     //returns if empty form is passed
     e.preventDefault();
-    try{
-    if (!email) return
-    const docRef = doc(collection(db, 'emails'))
-    const docSnap = await getDoc(docRef)
-    console.log(email)
-    await setDoc(docRef, { email: email, time: serverTimestamp()})
-    setMessage('Thank you! Your email has been recorded.');
-    setEmail('');
-    setSubmitted(true)
+    try {
+      if (!email) return
+      const docRef = doc(collection(db, 'emails'))
+      const docSnap = await getDoc(docRef)
+      console.log(email)
+      await setDoc(docRef, { email: email, time: serverTimestamp() })
+      setMessage('Thank you! Your email has been recorded.');
+      setEmail('');
+      setSubmitted(true)
     }
 
     catch {
       console.error('Error adding document: ', error);
-    setMessage('An error occurred. Please try again.');
+      setMessage('An error occurred. Please try again.');
 
     }
   };
@@ -41,63 +41,63 @@ export default function LandingPage() {
 
   return (
     <div>
-      <Analytics/>
-      <SpeedInsights/>
+      <Analytics />
+      <SpeedInsights />
       {/* ----- HEADER ----- */}
       <header class="font-Poppins">
-      <nav class="bg-zinc-500 flex items-center py-2">
-        <h1 class="font-bold text-white text-2xl pl-12">TRUVIEW</h1>
-        <ul class="hidden sm:flex flex-1 justify-end items-center gap-12 text-bookmark-blue uppercase text-xs pr-12">
-          <li class="cursor-pointer text-white"><Link href="https://www.linkedin.com/company/truview1/">About Us</Link></li>
-          <li class="cursor-pointer text-white"><Link href="https://www.linkedin.com/company/truview1/">Contact Us</Link></li>
-          <button type="button" class="bg-bookmark-red text-white rounded-md px-7 py-3 uppercase">LOGIN</button>
-        </ul>
-        <div class="flex sm:hidden flex-1 justify-end pr-8">
-          <i
-            class="text-2xl fa-solid fa-bars cursor-pointer"
-            onClick={toggleMenu}
-          ></i>
-        </div>
-      </nav>
+        <nav class="bg-zinc-500 flex items-center py-2">
+          <h1 class="font-bold text-white text-2xl pl-12">TRUVIEW</h1>
+          <ul class="hidden sm:flex flex-1 justify-end items-center gap-12 text-bookmark-blue uppercase text-xs pr-12">
+            <li class="cursor-pointer text-white"><Link href="/aboutus">About Us</Link></li>
+            <li class="cursor-pointer text-white"><Link href="https://www.linkedin.com/company/truview1/">Contact Us</Link></li>
+            <button type="button" class="bg-bookmark-red text-white rounded-md px-7 py-3 uppercase">LOGIN</button>
+          </ul>
+          <div class="flex sm:hidden flex-1 justify-end pr-8">
+            <i
+              class="text-2xl fa-solid fa-bars cursor-pointer"
+              onClick={toggleMenu}
+            ></i>
+          </div>
+        </nav>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <ul class="flex flex-col items-center bg-zinc-500 text-white text-center sm:hidden">
-          <li class="py-2 cursor-pointer text-white">About Us</li>
-          <li class="py-2 cursor-pointer text-white">Contact Us</li>
-          
+        {/* Mobile Menu */}
+        {isOpen && (
+          <ul class="flex flex-col items-center bg-zinc-500 text-white text-center sm:hidden">
+            <li class="py-2 cursor-pointer text-white">About Us</li>
+            <li class="py-2 cursor-pointer text-white">Contact Us</li>
+
             <button type="button" class="bg-bookmark-red text-white rounded-md px-7 py-3 mt-1 mb-3 uppercase">LOGIN</button>
-          
-        </ul>
-      )}
-    </header>
+
+          </ul>
+        )}
+      </header>
 
       {/* ----- HERO ----- */}
-      
+
       <section class="relative">
-      <div class="lg:bg-none bg-civil-3 bg-center pb-64 lg:hidden"></div>
-      <div class="bg-none lg:bg-civil-3 lg:bg-center lg:pb-48 pb-24">
-        <div class="container flex flex-col items-center lg:flex-row lg:justify-items-end gap-12 pt-14 lg:pt-64 lg:pb-64 ">
-          {/* ----- Image ----- */}
-          {/* <div class="flex justify-center flex-1 mb-10 md:mb-16 lg:mb-0 z-10">
+        <div class="lg:bg-none bg-civil-3 bg-center pb-64 lg:hidden"></div>
+        <div class="bg-none lg:bg-civil-3 lg:bg-center lg:pb-48 pb-24">
+          <div class="container flex flex-col items-center lg:flex-row lg:justify-items-end gap-12 pt-14 lg:pt-64 lg:pb-64 ">
+            {/* ----- Image ----- */}
+            {/* <div class="flex justify-center flex-1 mb-10 md:mb-16 lg:mb-0 z-10">
             <img class="w-5/6 h-5/6 sm:w-3/4 sm:h3/4 md:w-full md:h-full" src="/images/hero-bg.png" alt="" />
           </div> */}
-          {/* ----- Content ----- */}
-          <div class="flex flex-col justify-center lg:justify-items-end items-center lg:items-end max-w-md lg:ml-auto">
-            <h2 class="text-bookmark-blue text-3xl md:text-4 lg:text-5xl lg:text-right mb-6">
-              Your Partner In Disputes
-            </h2>
-            <p class="text-bookmark-grey text-lg text-center lg:text-right mb-6">
-              Manage your disputes effortlessly with our innovative dispute manager aided with BIM.
-            </p>
-            <div class="flex justify-center flex-wrap gap-6">
-              <button type="button" class="btn btn-zinc hover:bg-zinc-200 hover:text-black">More Info</button>
-              <button type="button" class="btn btn-white hover:bg-zinc-500 hover:text-white"><Link href="https://www.linkedin.com/company/truview1/">Contact Us</Link></button>
+            {/* ----- Content ----- */}
+            <div class="flex flex-col justify-center lg:justify-items-end items-center lg:items-end max-w-md lg:ml-auto">
+              <h2 class="text-bookmark-blue text-3xl md:text-4 lg:text-5xl lg:text-right mb-6">
+                Your Partner In Disputes
+              </h2>
+              <p class="text-bookmark-grey text-lg text-center lg:text-right mb-6">
+                Manage your disputes effortlessly with our innovative dispute manager aided with BIM.
+              </p>
+              <div class="flex justify-center flex-wrap gap-6">
+                <button type="button" class="btn btn-zinc hover:bg-zinc-200 hover:text-black">More Info</button>
+                <button type="button" class="btn btn-white hover:bg-zinc-500 hover:text-white"><Link href="https://www.linkedin.com/company/truview1/">Contact Us</Link></button>
+              </div>
             </div>
           </div>
-        </div>
-        {/* ----- ROUNDED RECTANGLE ----- */}
-        {/* <div class="hidden md:block overflow-hidden bg-slate-700 rounded-l-full absolute h-80 w-2/4 top-32 right-0 lg:-bottom-28 lg:-right-36">
+          {/* ----- ROUNDED RECTANGLE ----- */}
+          {/* <div class="hidden md:block overflow-hidden bg-slate-700 rounded-l-full absolute h-80 w-2/4 top-32 right-0 lg:-bottom-28 lg:-right-36">
         </div> */}
         </div>
       </section>
@@ -109,7 +109,7 @@ export default function LandingPage() {
         <div class="sm:w-3/4 lg:w-5/12 mx-auto px-2">
           <h1 class="text-3xl text-center text-bookmark-blue ">Features</h1>
           <p class="text-center text-bookmark-grey mt-4 ">
-          Our platform leverages the power of blockchain technology to ensure that every project is managed with unparalleled transparency, efficiency, and security. Say goodbye to disputes, inefficiencies, and trust issues—TruView is here to transform how you build, one project at a time.
+            Our platform leverages the power of blockchain technology to ensure that every project is managed with unparalleled transparency, efficiency, and security. Say goodbye to disputes, inefficiencies, and trust issues—TruView is here to transform how you build, one project at a time.
           </p>
         </div>
         {/* ----- Feature # 1 ----- */}
@@ -122,10 +122,10 @@ export default function LandingPage() {
             {/* ----- Content ----- */}
             <div class="flex flex-1 flex-col items-center lg:items-start">
               <h1 class="text-bookmark-blue text-3xl md:text-4 lg:text-5xl text-center lg:text-left mb-6">
-              Blockchain-Backed BIM Integration
+                Blockchain-Backed BIM Integration
               </h1>
               <p class="text-bookmark-grey my-4 text-lg text-center lg:text-left sm:w-3/4 lg:w-full">
-              Seamlessly combine the robust transparency of blockchain with the precision of BIM. TruView ensures every detail of your project is securely recorded and tamper-proof.</p>
+                Seamlessly combine the robust transparency of blockchain with the precision of BIM. TruView ensures every detail of your project is securely recorded and tamper-proof.</p>
               <div class="flex justify-center flex-wrap gap-6">
                 <button type="button" class="btn btn-zinc hover:bg-bookmark-white hover:text-black">More Info</button>
               </div>
@@ -145,10 +145,10 @@ export default function LandingPage() {
             {/* ----- Content ----- */}
             <div class="flex flex-1 flex-col items-center lg:items-start">
               <h1 class="text-bookmark-blue text-3xl md:text-4 lg:text-5xl text-center lg:text-left mb-6">
-              Efficient Dispute Resolution
+                Efficient Dispute Resolution
               </h1>
               <p class="text-bookmark-grey my-4 text-lg text-center lg:text-left sm:w-3/4 lg:w-full">
-              Resolve disputes faster and more effectively with a transparent, verifiable trail of project activities. TruView provides a clear, indisputable record to streamline arbitration processes.</p>
+                Resolve disputes faster and more effectively with a transparent, verifiable trail of project activities. TruView provides a clear, indisputable record to streamline arbitration processes.</p>
               <div class="flex justify-center flex-wrap gap-6">
                 <button type="button" class="btn btn-zinc hover:bg-bookmark-white hover:text-black">More Info</button>
               </div>
@@ -168,10 +168,10 @@ export default function LandingPage() {
             {/* ----- Content ----- */}
             <div class="flex flex-1 flex-col items-center lg:items-start">
               <h1 class="text-bookmark-blue text-3xl md:text-4 lg:text-5xl text-center lg:text-left mb-6">
-              Enhanced Stakeholder Trust
+                Enhanced Stakeholder Trust
               </h1>
               <p class="text-bookmark-grey my-4 text-lg text-center lg:text-left sm:w-3/4 lg:w-full">
-              Build trust among all project participants with a platform that guarantees accountability and transparency, reducing risks and fostering a collaborative environment.</p>
+                Build trust among all project participants with a platform that guarantees accountability and transparency, reducing risks and fostering a collaborative environment.</p>
               <div class="flex justify-center flex-wrap gap-6">
                 <button type="button" class="btn btn-zinc hover:bg-bookmark-white hover:text-black">More Info</button>
               </div>
@@ -183,56 +183,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ----- DOWNLOAD ----- */}
-
-      {/* <section class="py-20 mt-20">
-        <div class="sm:w-3/4 lg:w-5/12 mx-auto px-2">
-          <h1 class="text-3xl text-center text-bookmark-blue ">Download</h1>
-          <p class="text-center text-bookmark-grey mt-4 ">
-            Manage your bookmarks effortlessly with our simple bookmark manager. Organize your favorite websites, categorize them with tags, and easily access them whenever you need.
-          </p>
-        </div> */}
-        {/* ----- Cards ----- */}
-        {/* <div class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 max-w-screen-lg mt-16">
-          {/* ----- Card # 1 ----- */}
-          {/* <div class="flex flex-col rounded-md shadow-md lg:mb-16">
-            <div class="p-6 flex flex-col items-center">
-              <img src="/images/logo-chrome.svg" alt="" />
-              <h3 class="mt-5 mb-2 text-bookmark-blue text-lg">Add to Chrome</h3>
-              <p class="mb-2 text-bookmark-grey font-light">Minimum version 62</p>
-            </div>
-            <hr class="border-b border-bookmark-white"></hr>
-            <div class="flex p-6">
-              <button type="button" class="flex-1 btn btn-zinc hover:bg-bookmark-white hover:text-black">Add and Install Extension</button>
-            </div>
-          </div> */}
-          {/* ----- Card # 2 ----- */}
-          {/* <div class="flex flex-col rounded-md shadow-md lg:my-8">
-            <div class="p-6 flex flex-col items-center">
-              <img src="/images/logo-firefox.svg" alt="" />
-              <h3 class="mt-5 mb-2 text-bookmark-blue text-lg">Add to Firefox</h3>
-              <p class="mb-2 text-bookmark-grey font-light">Minimum version 62</p>
-            </div>
-            <hr class="border-b border-bookmark-white"></hr>
-            <div class="flex p-6">
-              <button type="button" class="flex-1 btn btn-zinc hover:bg-bookmark-white hover:text-black">Add and Install Extension</button>
-            </div>
-          </div> */}
-          {/* ----- Card # 3 ----- */}
-          {/* <div class="flex flex-col rounded-md shadow-md lg:mt-16">
-            <div class="p-6 flex flex-col items-center">
-              <img src="/images/logo-opera.svg" alt="" />
-              <h3 class="mt-5 mb-2 text-bookmark-blue text-lg">Add to Opera</h3>
-              <p class="mb-2 text-bookmark-grey font-light">Minimum version 62</p>
-            </div>
-            <hr class="border-b border-bookmark-white"></hr>
-            <div class="flex p-6">
-              <button type="button" class="flex-1 btn btn-zinc hover:bg-bookmark-white hover:text-black">Add and Install Extension</button>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
       {/* ----- FAQ ----- */}
 
       <section class="bg-bookmark-white py-20">
@@ -241,7 +191,7 @@ export default function LandingPage() {
           <div class="sm:w-3/4 lg:w-5/12 mx-auto px-2">
             <h1 class="text-3xl text-center text-bookmark-blue ">Frequently Asked Questions</h1>
             <p class="text-center text-bookmark-grey mt-4 ">
-            Everything You Need to Know About TruView
+              Everything You Need to Know About TruView
             </p>
           </div>
           {/* ----- FAQ Items ----- */}
@@ -252,55 +202,55 @@ export default function LandingPage() {
                 <i class="text-zinc-500 ml-auto justify-end fa-solid fa-chevron-down"></i>
               </summary>
               <div class="py-1 px-1 font-light text-sm">
-                  <p>TruView is a blockchain-backed project management platform designed to enhance transparency, efficiency, and trust in the construction industry by integrating with Building Information Modeling.</p>
+                <p>TruView is a blockchain-backed project management platform designed to enhance transparency, efficiency, and trust in the construction industry by integrating with Building Information Modeling.</p>
               </div>
             </details>
             <details class="flex items-center border-b py-4">
               <summary class="flex-1 outline-none cursor-pointer flex justify-start">
-              How does TruView improve dispute resolution?
+                How does TruView improve dispute resolution?
                 <i class="text-zinc-500 ml-auto justify-end fa-solid fa-chevron-down"></i>
               </summary>
               <div class="py-1 px-1 font-light text-sm">
-                  <p>TruView keeps an immutable, verifiable record of all project data, which can be used to resolve disputes quickly and fairly, reducing the need for lengthy litigation.</p>
+                <p>TruView keeps an immutable, verifiable record of all project data, which can be used to resolve disputes quickly and fairly, reducing the need for lengthy litigation.</p>
               </div>
             </details>
             <details class="flex items-center border-b py-4">
               <summary class="flex-1 outline-none cursor-pointer flex justify-start">
-              Can TruView be integrated with my current systems?
+                Can TruView be integrated with my current systems?
                 <i class="text-zinc-500 ml-auto justify-end fa-solid fa-chevron-down"></i>
               </summary>
               <div class="py-1 px-1 font-light text-sm">
-                  <p>Yes, TruView is designed to seamlessly integrate with existing BIM systems and project management tools, ensuring a smooth transition and enhanced functionality.</p>
+                <p>Yes, TruView is designed to seamlessly integrate with existing BIM systems and project management tools, ensuring a smooth transition and enhanced functionality.</p>
               </div>
             </details>
             <details class="flex items-center border-b py-4">
               <summary class="flex-1 outline-none cursor-pointer flex justify-start">
-              Is my data secure with TruView?
+                Is my data secure with TruView?
                 <i class="text-zinc-500 ml-auto justify-end fa-solid fa-chevron-down"></i>
               </summary>
               <div class="py-1 px-1 font-light text-sm">
-                  <p>Absolutely. TruView leverages blockchain technology, making all data stored on the platform immutable and tamper-proof, ensuring maximum security and integrity.</p>
+                <p>Absolutely. TruView leverages blockchain technology, making all data stored on the platform immutable and tamper-proof, ensuring maximum security and integrity.</p>
               </div>
             </details>
             <details class="flex items-center border-b py-4">
               <summary class="flex-1 outline-none cursor-pointer flex justify-start">
-              Who can benefit from using TruView?
+                Who can benefit from using TruView?
                 <i class="text-zinc-500 ml-auto justify-end fa-solid fa-chevron-down"></i>
               </summary>
               <div class="py-1 px-1 font-light text-sm">
-                  <p>TruView is ideal for construction companies, project managers, architects, and all stakeholders involved in large-scale construction projects who want to ensure transparency and efficiency.</p>
+                <p>TruView is ideal for construction companies, project managers, architects, and all stakeholders involved in large-scale construction projects who want to ensure transparency and efficiency.</p>
               </div>
             </details>
             <details class="flex items-center border-b py-4">
               <summary class="flex-1 outline-none cursor-pointer flex justify-start">
-              How can I get started with TruView?
+                How can I get started with TruView?
                 <i class="text-zinc-500 ml-auto justify-end fa-solid fa-chevron-down"></i>
               </summary>
               <div class="py-1 px-1 font-light text-sm">
-                  <p>Getting started with TruView is easy. Contact us today to schedule a demo or to speak with one of our experts about how TruView can transform your next project.</p>
+                <p>Getting started with TruView is easy. Contact us today to schedule a demo or to speak with one of our experts about how TruView can transform your next project.</p>
               </div>
             </details>
-            
+
             <button type="button" class="flex self-center mt-4 btn btn-zinc hover:bg-bookmark-white hover:text-black">More Info</button>
           </div>
         </div>
@@ -314,21 +264,21 @@ export default function LandingPage() {
             {/* <p class="font-light uppercase text-center mb-8">35,000+ ALREADY JOINED</p> */}
             <h1 class="text-3xl text-center"> Stay up-to-date with what we're doing</h1>
             <div class="flex flex-col md:flex-row gap-6 mt-8 justify-center">
-            {!submitted ? (
-        <form onSubmit={handleSubmit}>
-          <input
-            class="focus:outline-none flex-1 px-2 py-3 rounded-md text-black"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter your email address"
-            required
-          />
-          <button type="submit" class="btn btn-red hover:bg-bookmark-white hover:text-black ml-2">Subscribe</button>
-        </form>
-      ) : (
-        message && <p>{message}</p>
-      )}
+              {!submitted ? (
+                <form onSubmit={handleSubmit}>
+                  <input
+                    class="focus:outline-none flex-1 px-2 py-3 rounded-md text-black"
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter your email address"
+                    required
+                  />
+                  <button type="submit" class="btn btn-red hover:bg-bookmark-white hover:text-black ml-2">Subscribe</button>
+                </form>
+              ) : (
+                message && <p>{message}</p>
+              )}
               {/* <input type="text" placeholder="Enter your email address" class="focus:outline-none flex-1 px-2 py-3 rounded-md text-black" />
               <button type="button" class="btn btn-red hover:bg-bookmark-white hover:text-black">Contact Us</button> */}
             </div>
@@ -337,15 +287,15 @@ export default function LandingPage() {
       </section>
 
       {/* ----- Footer ----- */}
-      
+
       <section class="bg-zinc-500 py-8">
         <div class="container flex flex-col md:flex-row items-center">
           <div class="flex flex-1 flex-wrap items-center justify-center md:justify-start gap-12">
             {/* <img src="/images/logo-bookmark-white.png" alt="" /> */}
-            <h1 class="font-bold text-white text-2xl pl-12">TRUVIEW</h1>
+            <h1 class="font-bold text-white text-2xl pl-12"><Link href="/">TRUVIEW</Link></h1>
             <ul class="flex text-white uppercase gap-12 text-xs">
-            <li class="cursor-pointer text-white"><Link href="https://www.linkedin.com/company/truview1/">Contact Us</Link></li>
-
+              <li class="cursor-pointer text-white"><Link href="/aboutus">About Us</Link></li>
+              <li class="cursor-pointer text-white"><Link href="https://www.linkedin.com/company/truview1/">Contact Us</Link></li>
             </ul>
           </div>
           <div class="flex gap-10 mt-12 md:mt-0">
