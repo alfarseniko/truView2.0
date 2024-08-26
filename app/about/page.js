@@ -35,7 +35,7 @@ export default function AboutUs() {
         {/* Mobile Menu */}
         {hamburgerIsOpen && (
           <ul class="flex flex-col items-center bg-zinc-500 text-white text-center sm:hidden">
-            <li class="py-2 cursor-pointer text-white">About Us</li>
+            <li class="py-2 cursor-pointer text-white"><Link href="/about">About Us</Link></li>
             <li class="py-2 cursor-pointer text-white"><Link href="/contact">Contact Us</Link></li>
 
             <button type="button" class="bg-bookmark-red text-white rounded-md px-7 py-3 mt-1 mb-3 uppercase">LOGIN</button>

@@ -47,7 +47,7 @@ export default function LandingPage() {
         <nav class="bg-zinc-500 flex items-center py-2">
           <h1 class="font-bold text-white text-2xl pl-12">TRUVIEW</h1>
           <ul class="hidden sm:flex flex-1 justify-end items-center gap-12 text-bookmark-blue uppercase text-xs pr-12">
-            <li class="cursor-pointer text-white"><Link href="/aboutus">About Us</Link></li>
+            <li class="cursor-pointer text-white"><Link href="/about">About Us</Link></li>
             <li class="cursor-pointer text-white"><Link href="/contact">Contact Us</Link></li>
             <button type="button" class="bg-bookmark-red text-white rounded-md px-7 py-3 uppercase">LOGIN</button>
           </ul>
@@ -62,7 +62,7 @@ export default function LandingPage() {
         {/* Mobile Menu */}
         {isOpen && (
           <ul class="flex flex-col items-center bg-zinc-500 text-white text-center sm:hidden">
-            <li class="py-2 cursor-pointer text-white"><Link href="/aboutus">About Us</Link></li>
+            <li class="py-2 cursor-pointer text-white"><Link href="/about">About Us</Link></li>
             <li class="py-2 cursor-pointer text-white"><Link href="https://www.linkedin.com/company/truview1/">Contact Us</Link></li>
 
             <button type="button" class="bg-bookmark-red text-white rounded-md px-7 py-3 mt-1 mb-3 uppercase">LOGIN</button>
