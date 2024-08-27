@@ -52,6 +52,7 @@ export default function LandingPage() {
             <li class="cursor-pointer text-white"><Link href="/contact">Contact Us</Link></li>
             <button type="button" class="bg-bookmark-red text-white rounded-md px-7 py-3 uppercase">LOGIN</button>
           </ul>
+          <div></div>
           <div class="flex sm:hidden flex-1 justify-end pr-8">
             <i
               class="text-2xl fa-solid fa-bars cursor-pointer"
