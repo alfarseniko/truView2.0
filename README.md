@@ -1,57 +1,71 @@
-# TruView
+# TruView: Blockchain-Powered BIM Platform for Construction
 
 ![TruView Logo](./public/favicon.png)
 
 ## Overview
 
-**TruView** is an innovative platform built on the Next.js framework that leverages blockchain technology to revolutionize the construction industry by integrating with Building Information Modeling (BIM). This integration enhances transparency, security, and efficiency in construction projects by ensuring that all project documentation and models are immutable, traceable, and accessible to authorized stakeholders. The platform aims to resolve common issues like disputes, data integrity, and document management, making construction processes smoother and more reliable.
+TruView is a Next.js-based platform revolutionizing the construction industry by integrating blockchain technology with Building Information Modeling (BIM). This integration enhances transparency, security, and efficiency by ensuring project documentation and models are immutable, traceable, and accessible to authorized stakeholders.  TruView aims to resolve common construction issues like disputes, data integrity problems, and inefficient document management.
 
-## Key Features
+## Features
 
-- **Blockchain Integration**: All project documents and BIM models are stored on the blockchain, ensuring immutability and traceability.
-- **Decentralized Document Management**: Securely manage and access project documents, including contracts, designs, and revisions, through a decentralized system.
-- **Dispute Resolution**: Utilize smart contracts to automate and secure dispute resolution processes, reducing the time and cost associated with traditional methods.
-- **Transparency and Audit Trails**: Every transaction and change is logged on the blockchain, providing a transparent and auditable trail of activities.
-- **InterPlanetary File System (IPFS)**: Large BIM models are stored off-chain in IPFS, with only the hash stored on the blockchain, ensuring data integrity and accessibility without burdening the blockchain.
-- **User-Friendly Interface**: Built with React and Tailwind CSS, the platform offers an intuitive interface for easy navigation and interaction.
+* **Blockchain Integration:** All project documents and BIM models are stored on a blockchain for immutability and traceability.
+* **Decentralized Document Management:** Securely manage and access project documents (contracts, designs, revisions) via a decentralized system.
+* **Dispute Resolution:** Smart contracts automate and secure dispute resolution, reducing time and cost.
+* **Transparency and Audit Trails:** Every transaction and change is logged on the blockchain, providing a complete audit trail.
+* **IPFS Integration:** Large BIM models are stored off-chain using IPFS; only the hash is stored on the blockchain, ensuring data integrity and accessibility without blockchain congestion.
+* **User-Friendly Interface:**  Built with React and Tailwind CSS for intuitive navigation and interaction.
 
-## Technology Stack
+## Usage
 
-- **Frontend**: Next.js, React, Tailwind CSS
-- **Backend**: Node.js, Firebase
-- **Smart Contracts**: Solidity, Foundry
-- **File Storage**: IPFS
+* **Document Uploading:** Authorized users upload project documents and BIM models.  These are stored on IPFS, with the corresponding hash stored on the blockchain.
+* **Project Viewing:** Users view project documents and models, track changes, and access the audit trail.
+* **Dispute Resolution:**  In disputes, relevant smart contracts are triggered to resolve issues based on predefined rules.
 
-## Getting Started
+
+## Installation
 
 ### Prerequisites
 
-- **Node.js** (v22.5.1)
-- **npm**
-- **Foundry** for smart contract development
-- **IPFS** setup for file storage
+* Node.js (v22.5.1)
+* npm
+* Foundry (for smart contract development)
+* IPFS (setup for file storage)
 
-### Installation
+### Steps
 
-1. **Clone the repository**:
+1. Clone the repository:
    ```bash
    git clone https://github.com/alfarseniko/truView2.0.git
    cd truView2.0
    ```
-2. **Install dependencies:**:
+2. Install dependencies:
    ```bash
-    npm install
+   npm install
    ```
-3. **Run the application on local host:**:
+3. Run the application:
    ```bash
-    npm run dev
+   npm run dev
    ```
 
-### Usage
+## Technologies Used
 
-- **Uploading Documents**: Authorized users can upload project documents and BIM models, which are then stored securely on the IPFS with the corresponding hash stored on the blockchain.
-- **Viewing Projects**: Users can view all the documents and models associated with a project, track changes, and view the audit trail.
-- **Dispute Resolution**: In the case of a dispute, the relevant smart contract can be triggered to resolve the issue according to predefined rules.
+* **Frontend:** Next.js (React framework for building user interfaces), React (JavaScript library for building user interfaces), Tailwind CSS (utility-first CSS framework).
+* **Backend:** Node.js (JavaScript runtime environment), Firebase (Backend-as-a-Service platform providing database, authentication, and other services).
+* **Smart Contracts:** Solidity (programming language for writing smart contracts), Foundry (development environment for Solidity).
+* **File Storage:** IPFS (InterPlanetary File System for decentralized storage of large files).
+
+
+## Configuration
+
+The project uses a `.eslintrc.json` file for ESLint configuration, extending the `next/core-web-vitals` preset.  Further configuration details can be found within the respective configuration files.  Firebase configuration is handled within `app/firebase.js`.
+
+## Dependencies
+
+The project dependencies are listed in `package.json`.
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request.
 
 ## License
 
@@ -66,3 +80,6 @@ This project was inspired by the need to modernize document management and dispu
 
 For more information, please visit our [website](https://www.truview.dev).
 
+
+
+*README.md was made with [Etchr](https://etchr.dev)*
